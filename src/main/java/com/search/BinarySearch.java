@@ -11,20 +11,23 @@ public class BinarySearch {
      * 3. 当 A[mid]不等于target时，high = mid - 1或low = mid + 1
      * 时间复杂度: O(log2n) 空间O(1)
      */
-    public static Integer binarySearch(int x, int[] ary) {
+    public static Integer binarySearch(int item, int[] list) {
         int low = 0;
-        int hight = ary.length - 1;
+        int hight = list.length - 1;
 
         while (low <= hight) {
             int mid = low + (hight - low) / 2; //注意：若使用(low+high)/2求中间位置容易溢出
-            int t = ary[mid];
-            if (t == x) {
-                return t;
-            } else if (t < x) {
-                low = mid + 1;
-            } else {
-                hight = mid - 1;
+            int guess = list[mid];
+            if (guess == item) {
+                return mid; //return item index number
             }
+
+            if (guess < item) {
+                low = mid + 1;
+                continue;
+            }
+
+            hight = mid - 1;
         }
         return null;
     }
