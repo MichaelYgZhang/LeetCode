@@ -1,4 +1,4 @@
-package com.base.algorithms.search;
+package com.search;
 
 public class BinarySearch {
 
