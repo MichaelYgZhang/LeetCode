@@ -2,8 +2,6 @@ package com.search;
 
 public class BinarySearch {
 
-    private int low;
-
     /**
      * 非递归方式:
      * 1. 循环的判定条件是：low <= high
